@@ -3,10 +3,12 @@ const env = require("dotenv").config()
 const app = express()
 const dbConnect = require("./Config/dbConnect")
 const userRouter = require("./Routes/userRoute")
+const adminRouter = require("./Routes/adminRoute")
 
 app.use(express.json({extended : true, limit : "50mb" }))
 
 app.use("/api/user", userRouter)
+app.use("/api/admin", adminRouter)
 
 
 

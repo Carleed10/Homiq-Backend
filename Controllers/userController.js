@@ -56,7 +56,7 @@ const signIn = async (req, res) => {
         } else {
             try {
                 const comparePassword = await bcryptjs.compare(password, findUser.password)
-                const secretKey = process.env.SECRER_KEY
+                const secretKey = process.env.SECRET_KEY
 
                 if (!comparePassword) {
                     res.status(401).send({ message: "Password does not match, pls try again" })
